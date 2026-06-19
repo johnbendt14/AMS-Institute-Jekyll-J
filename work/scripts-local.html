@@ -115,11 +115,11 @@ function removeWait() {
 //
 // 1. Add an "MEI URL" column to _includes/metadata/works.json.
 // 2. In work/listeners.html, add the Verovio script:
-//    <script src="https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js"></script>
+//    Use the Verovio script from https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js
 // 3. In work/index.md, replace this Humdrum element:
-//    <script type="text/x-humdrum" id="my-score"></script>
+//    The script element with id="my-score"
 //    with this notation container:
-//    <div id="notation"></div>
+//    A div element with id="notation"
 // 4. Replace displayWork(SCORES.workid) with displayMEIWork(SCORES.workid).
 
 /*
