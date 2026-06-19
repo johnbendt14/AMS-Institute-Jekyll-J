@@ -7,5 +7,5 @@ layout: home
 
 SCORES is a small Jekyll prototype for publishing a musical corpus.
 
-- [Browse the scores](/browse/)
-- [Read about the project](/about/)
+- [Browse the scores]({{ "/browse/" | relative_url }})
+- [Read about the project]({{ "/about/" | relative_url }})

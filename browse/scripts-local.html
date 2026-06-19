@@ -64,7 +64,7 @@ function getTitle(entry) {
 // encodeURIComponent keeps special characters safe inside a URL.
 
 function getScoreURL(entry) {
-	return `/work/?id=${encodeURIComponent(entry.ID || "")}`;
+	return `{{ "/work/" | relative_url }}?id=${encodeURIComponent(entry.ID || "")}`;
 }
 
 </script>
