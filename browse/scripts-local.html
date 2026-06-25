@@ -11,7 +11,7 @@ function displayBrowseTable(data, selector) {
 	if (!element) {
 		return;
 	}
-	let headings = [INDEX_composer, INDEX_title, INDEX_genre, INDEX_voice];
+	let headings = [INDEX_composer, INDEX_letter, INDEX_day];
 	element.innerHTML = `
 		<table class="browse">
 			<thead>${makeTableHeader(headings)}</thead>
@@ -37,8 +37,8 @@ function makeTableBody(headings, data) {
 		let cells = headings.map(function(heading) {
 			let value = entry[heading] || "";
 			let tdClass = heading.replace(/\s+/g, "-").replace(/[^a-zA-Z0-9_-]/g, "").toLowerCase();
-			if (heading === INDEX_title) {
-				value = `<a href="${getScoreURL(entry)}">${getTitle(entry)}</a>`;
+			if (heading === INDEX_day) {
+				value = `<a href="${getScoreURL(entry)}">${entry[INDEX_day]}</a>`;
 			}
 			return `<td class="${tdClass}">${value}</td>`;
 		});
@@ -51,12 +51,12 @@ function makeTableBody(headings, data) {
 // If a work has both, the subtitle is shown after a comma.
 
 function getTitle(entry) {
-	let title = entry.Title || "";
+	let day = entry[INDEX_day] || "";
 	let subtitle = entry.Subtitle || "";
-	if (title && subtitle) {
-		return `${title}, <i>${subtitle}</i>`;
+	if (day && subtitle) {
+		return `${day}, <i>${subtitle}</i>`;
 	}
-	return title || subtitle;
+	return day || subtitle;
 }
 
 
